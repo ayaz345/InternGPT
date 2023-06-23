@@ -50,8 +50,8 @@ class LDMInpainting:
         self.sampler = DDIMSampler(model)
     
     def download_parameters(self):
-        url = 'https://heibox.uni-heidelberg.de/f/4d9ac7ea40c64582b7c9/?dl=1'
         if not os.path.exists(self.model_checkpoint_path):
+            url = 'https://heibox.uni-heidelberg.de/f/4d9ac7ea40c64582b7c9/?dl=1'
             wget.download(url, out=self.model_checkpoint_path)
 
     @prompts(name="Remove the Masked Object",
